@@ -2,6 +2,9 @@ package com.dinesh.concurrent;
 
 import java.util.concurrent.*;
 
+/**
+ * The problem with usinn Runnable to create task is that it cannot expect a response back from task.
+ */
 public class CallableExample
 {
 
@@ -23,8 +26,9 @@ public class CallableExample
         //A callable method must have a return type
         Callable callable = () -> waitforMe(500);
         ExecutorService service = Executors.newSingleThreadExecutor();
-        Future future = service.submit(callable);
-        future.get();
+        Future<String> future = service.submit(callable);
+        String result = future.get();
+        System.out.println(result);
         System.out.println("Done");
     }
 
@@ -33,8 +37,21 @@ public class CallableExample
         //A callable method must have a return type
         Callable callable = () -> waitforMe(500);
         ExecutorService service = Executors.newSingleThreadExecutor();
-        service.submit(callable);
+        Future<String> future =service.submit(callable);
+
         System.out.println("Done");
+    }
+
+    private static void sleep(int i)
+    {
+        try
+        {
+            Thread.sleep(i);
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     static String waitforMe(int seconds)
