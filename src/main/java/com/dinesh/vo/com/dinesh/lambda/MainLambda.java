@@ -18,11 +18,11 @@ public class MainLambda
         addApple(new Apple(130, Apple.Color.GREEN));
         addApple(new Apple(155, Apple.Color.RED));
         addApple(new Apple(160, Apple.Color.GREEN));
-        appleList.sort(Comparator.comparing(Apple::getColor));
+        appleList.sort(Comparator.comparing(Apple::getWeight));
         appleList.stream().forEach(apple -> System.out.println(apple.toString()));
 
-        /*Comparator<Apple> byWeight =
-                (Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight());*/
+        Comparator<Apple> byWeight = Comparator.comparing(Apple::getWeight);
+       // Comparator<Apple> byColor = (Apple a1, Apple a2) -> a1.getColor().compareTo(a2.getColor());
 
     }
 
