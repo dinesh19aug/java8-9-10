@@ -10,10 +10,10 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-import com.dinesh.concurrent.chain.simple.User;
+import com.dinesh.concurrent.chain.vo.User;
 
 
-public class AsyncExample
+public class AsyncNewThreadExample
 {
 //PIPELINE: Given a list of Ids --> Get Users for those Ids --> Print those user ids
     // Running tasks in differemt threads

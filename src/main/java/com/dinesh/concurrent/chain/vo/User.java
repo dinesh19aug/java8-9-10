@@ -1,4 +1,4 @@
-package com.dinesh.concurrent.chain.simple;
+package com.dinesh.concurrent.chain.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
