@@ -4,7 +4,7 @@ import java.util.function.BiFunction;
 
 public class BiFunctionInterface
 {
-    //biFunction<T,U,R> T and U are params and R is the result
+    //biFunction<T,U,R> T and U are params and R is the result 
     static BiFunction<Integer, Integer, String> addTwoString =(x,y)->{
         String result;
         Integer sum = x+y;
